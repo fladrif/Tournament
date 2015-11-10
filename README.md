@@ -32,21 +32,46 @@ abort closing the window, or to close without saving.
 
 
 ::Design Document::
- 8 players:  3 rounds
-16 players:  4 rounds
-32 players:  5 rounds
-64 players:  6 rounds
+
+  8 players:  3 rounds
+
+ 16 players:  4 rounds
+
+ 32 players:  5 rounds
+
+ 64 players:  6 rounds
+
+128 players:  7 rounds
+
+226 players:  8 rounds
+
+409 players:  9 rounds
+
+>410 players: 10 rounds
+
 
 TieBreakers
+
 1. Match points
+
 	a. 3 points for every win
+
 	b. 0 points for every loss
+
 	c. 1 point for every draw
+
 2. Opponent's Match-Win %
+
 	a. avg((match points / (3 * #ofMatches)) || 0.33)
+
 3. Game points
+
 	a. 3 points for every win
+
 	b. 0 points for every loss
+
 	c. 1 point for every draw
+
 4. Opponent's Game-Win %
+
 	a. avg((game points / (3 * #ofGames)) || 0.33)
