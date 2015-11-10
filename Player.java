@@ -1,12 +1,15 @@
 public class Player{
 	String name;
-	float points;
-	int win, loss, draw;
+	int matches, games, matchPoints, gamePoints;
+	list<Player> opponents;
 	public Player(String name){
 		this.name = name;
-		points = 0;
-		win = 0;
-		loss = 0;
-		draw = 0;
+		games = 0;
+		matches = 0;
+		matchPoints = 0;
+		gamePoints = 0;
+	}
+	public void addOpp(Player p){
+		opponents.add(p);
 	}
 }
