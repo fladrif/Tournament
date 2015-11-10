@@ -9,6 +9,7 @@ Implement with: JavaFX
 
 
 ::Program Document::
+
 The program starts off with a manager that prompts the user to either create a new tournament,
 load a save, or view the results of a past tournament. Starting a new tournament will prompt for more 
 specific information regarding it, like date, format, and an optional description for
@@ -47,7 +48,7 @@ abort closing the window, or to close without saving.
 
 409 players:  9 rounds
 
->410 players: 10 rounds
+410 players:  10 rounds
 
 
 TieBreakers
