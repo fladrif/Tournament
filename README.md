@@ -31,6 +31,9 @@ record is saved as a file which can then be reviewed later. Closing the tourname
 middle of a tournament will prompt the user to determine whether or not to save the current tournament,
 abort closing the window, or to close without saving. 
 
+Adding capability to drop players, having checkboxes on the match result window, as well as an additional
+window inbetween rounds listing active players and their rankings.
+
 
 ::Design Document::
 
