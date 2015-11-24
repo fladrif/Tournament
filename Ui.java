@@ -1,5 +1,3 @@
-public class Ui{
-	public Ui(){
-		
-	}
+public interface Ui{
+	
 }
