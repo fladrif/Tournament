@@ -3,7 +3,11 @@ public class Logic{
 	public Logic(Ui inout){
 		tournament = new Tourney();
 		while(true){
-			tournament.registerPlayer(inout.getPlayer);
+			if(inout.getOrRemove()){
+				tournament.registerPlayer(inout.getPlayer());
+			} else {
+				tournmanet.removePlayer(inout.removePlayer());
+			}
 		}
 	}
 }
