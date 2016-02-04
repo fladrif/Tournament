@@ -12,6 +12,7 @@ public class Player{
 		matches = 0;
 		matchPoints = 0;
 		gamePoints = 0;
+		opponents = new LinkedList<Player>();
 	}
 	public void addOpp(Player p){
 		opponents.add(p);

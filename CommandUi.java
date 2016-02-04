@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class CommandUi{
+public class CommandUi implements Ui{
 	Scanner scan;
 	public CommandUi(){
 		scan = new Scanner(System.in);
@@ -14,9 +14,13 @@ public class CommandUi{
 		return scan.nextInt();
 	}
 	public boolean getOrRemove(){
-		System.out.println("Add or remove player? A/R");
-		if(scan.nextLine().equals("A")) return true;
-		else return false;
+		System.out.println("Add or remove player? a/r");
+		String input = scan.nextLine();
+		while(true){
+			if(input.equals("a")) return true;
+			else if(input.equals("r")) return false;
+			else input = scan.nextLine();
+		}
 	}
 	public void showPlayers(LinkedList<Player> players){
 		for(Player p : players){

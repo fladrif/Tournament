@@ -13,12 +13,15 @@ public class Tourney{
 	}
 	public void startTournament(){
 		active = players;
+		Collections.shuffle(active);
 		rounds = new LinkedList<Round>();
 		roundNum = 1;
+		rounds.add(new Round(roundNum, active));
 	}
 	public boolean nextRound(){
 		if(rounds.get(roundNum - 1).roundFinished()){
-			rounds.add(newRound(roundNum, active));
+			Collections.shuffle(active);
+			rounds.add(new Round(roundNum++, active));
 			return true;
 		} else {
 			return false;
@@ -33,10 +36,25 @@ public class Tourney{
 	public void removePlayer(int id){
 		players.remove(players.stream().filter(a -> a.getId() == id).iterator().next());
 	}
+	public void dropPlayer(int id){
+		active.remove(active.stream().filter(a -> a.getId() == id).iterator().next());
+	}
 	public LinkedList<Player> getPlayers(){
 		return players;
 	}
 	public int getRoundNum(){
 		return roundNum;
+	}
+
+	//DEBUG CODE
+	public void printPlayers(){
+		Iterator<Player> plit = players.stream().iterator();
+		while(plit.hasNext()){
+			Player pl = plit.next();
+			System.out.println("Player name: " + pl.getName() + " ID: " + pl.getId());
+		}
+	}
+	public void printMatches(){
+		rounds.get(roundNum-1).printMatches();
 	}
 }

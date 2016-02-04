@@ -6,8 +6,9 @@ public class Logic{
 			if(inout.getOrRemove()){
 				tournament.registerPlayer(inout.getPlayer());
 			} else {
-				tournmanet.removePlayer(inout.removePlayer());
+				tournament.removePlayer(inout.removePlayer());
 			}
+			inout.showPlayers(tournament.getPlayers());
 		}
 	}
 }

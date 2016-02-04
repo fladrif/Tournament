@@ -21,6 +21,7 @@
 */
 public class Main{
 	public static void main(String[] args){
-		
+		CommandUi ui = new CommandUi();
+		Logic log = new Logic(ui);
 	}
 }

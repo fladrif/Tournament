@@ -23,6 +23,7 @@ public class Match{
 		draw = 0;
 		player1.addMatch(3);
 		player1.addGames(2, 6);
+		done = true;
 	}
 	public boolean matchResult(int w, int l, int d){
 		if((win + loss + draw) > 3) return false;
@@ -51,7 +52,7 @@ public class Match{
 	public int getDraw(){
 		return draw;
 	}
-	public int getTable()[
+	public int getTable(){
 		return table;
 	}
 	public boolean getDone(){
