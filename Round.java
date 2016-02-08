@@ -21,6 +21,12 @@ public class Round{
 		}
 		return true;
 	}
+	public LinkedList<Match> getMatches(){
+		return matches;
+	}
+	public int getRoundNum(){
+		return roundNum;
+	}
 
 	//DEBUG
 	public void printMatches(){

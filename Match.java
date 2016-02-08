@@ -26,10 +26,14 @@ public class Match{
 		done = true;
 	}
 	public boolean matchResult(int w, int l, int d){
-		if((win + loss + draw) > 3) return false;
 		this.win = w;
 		this.loss = l;
 		this.draw = d;
+		if(win != 0 && win != 1 && win != 2) return false;
+		if(loss != 0 && loss != 1 && loss != 2) return false;
+		if(draw != 0 && draw != 1 && draw != 2) return false;
+		if((win + loss + draw) > 3) return false;
+		//move to new method that calls when finishing round
 		player1.addMatch(win > loss ? 3 : (win == loss ? 1 : 0));
 		player1.addGames(win + loss + draw, win * 3 + draw);
 		player2.addMatch(loss > win ? 3 : (win == loss ? 1 : 0));

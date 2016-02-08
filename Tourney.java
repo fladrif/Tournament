@@ -18,14 +18,16 @@ public class Tourney{
 		roundNum = 1;
 		rounds.add(new Round(roundNum, active));
 	}
-	public boolean nextRound(){
+	public boolean roundFinished(){
 		if(rounds.get(roundNum - 1).roundFinished()){
-			Collections.shuffle(active);
-			rounds.add(new Round(roundNum++, active));
 			return true;
 		} else {
 			return false;
 		}
+	}
+	public void nextRound(){
+		Collections.shuffle(active);
+		rounds.add(new Round(++roundNum, active));
 	}
 	public boolean finishMatch(int table, int win, int loss, int draw){
 		return rounds.get(roundNum - 1).finishMatch(table, win, loss, draw);
@@ -42,8 +44,18 @@ public class Tourney{
 	public LinkedList<Player> getPlayers(){
 		return players;
 	}
-	public int getRoundNum(){
-		return roundNum;
+	public LinkedList<Player> getActive(){
+		return active;
+	}
+	public Round getRound(){
+		return rounds.get(roundNum-1);
+	}
+	public int numOfPlayers(){
+		int sum = 0;
+		for(Player p : active){
+			sum++;
+		}
+		return sum;
 	}
 
 	//DEBUG CODE
