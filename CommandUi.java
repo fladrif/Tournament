@@ -80,7 +80,7 @@ public class CommandUi implements Ui{
 			} else if(a.getPlayer2() != null){
 				System.out.println("done ::Table " + a.getTable() + ": " + a.getPlayer1().getName() + " vs. " + a.getPlayer2().getName() + "::");
 			} else {
-				System.out.println(a.getPlayer1() + " has a bye");
+				System.out.println(a.getPlayer1().getName() + " has a bye");
 			}
 		}
 	}
