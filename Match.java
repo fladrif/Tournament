@@ -33,13 +33,14 @@ public class Match{
 		if(loss != 0 && loss != 1 && loss != 2) return false;
 		if(draw != 0 && draw != 1 && draw != 2) return false;
 		if((win + loss + draw) > 3) return false;
-		//move to new method that calls when finishing round
+		done = true;
+		return true;
+	}
+	public void finishMatch(){
 		player1.addMatch(win > loss ? 3 : (win == loss ? 1 : 0));
 		player1.addGames(win + loss + draw, win * 3 + draw);
 		player2.addMatch(loss > win ? 3 : (win == loss ? 1 : 0));
 		player2.addGames(win + loss + draw, loss * 3 + draw);
-		done = true;
-		return true;
 	}
 	public Player getPlayer1(){
 		return player1;

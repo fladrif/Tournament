@@ -19,6 +19,10 @@ public class Round{
 		while(materate.hasNext()){
 			if(!materate.next().getDone()) return false;
 		}
+		materate = matches.stream().iterator();
+		while(materate.hasNext()){
+			materate.next().finishMatch();
+		}
 		return true;
 	}
 	public LinkedList<Match> getMatches(){
