@@ -25,7 +25,7 @@ public class CommandUi implements Ui{
 	}
 	*/
 	public int getOrRemoveOrDone(){
-		System.out.print("Add or remove player, or finish. a/r/f ");
+		System.out.print("Add or remove player, or finish: a/r/f ");
 		String input = scan.nextLine();
 		while(true){
 			if(input.equals("a")) return 1;
@@ -34,12 +34,24 @@ public class CommandUi implements Ui{
 			else input = scan.nextLine();
 		}
 	}
+	/*
 	public boolean reportOrFinish(){
 		System.out.print("Report match or finish round? r/f ");
 		String input = scan.nextLine();
 		while(true){
 			if(input.equals("r")) return true;
 			else if(input.equals("f")) return false;
+			else input = scan.nextLine();
+		}
+	}
+	*/
+	public int reportOrDropOrFinish(){
+		System.out.print("Report match, drop player, or finish round: r/d/f ");
+		String input = scan.nextLine();
+		while(true){
+			if(input.equals("r")) return 1;
+			else if(input.equals("d")) return 0;
+			else if(input.equals("f")) return -1;
 			else input = scan.nextLine();
 		}
 	}

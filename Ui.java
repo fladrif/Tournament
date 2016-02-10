@@ -3,9 +3,8 @@ import java.util.*;
 public interface Ui{
 	public String getPlayer();
 	public int removePlayer();
-	//public boolean getOrRemove();
 	public int getOrRemoveOrDone();
-	public boolean reportOrFinish();
+	public int reportOrDropOrFinish();
 	public int getTable();
 	public int getWin();
 	public int getLoss();

@@ -39,8 +39,10 @@ public class Match{
 	public void finishMatch(){
 		player1.addMatch(win > loss ? 3 : (win == loss ? 1 : 0));
 		player1.addGames(win + loss + draw, win * 3 + draw);
-		player2.addMatch(loss > win ? 3 : (win == loss ? 1 : 0));
-		player2.addGames(win + loss + draw, loss * 3 + draw);
+		if(player2 != null){
+			player2.addMatch(loss > win ? 3 : (win == loss ? 1 : 0));
+			player2.addGames(win + loss + draw, loss * 3 + draw);
+		}
 	}
 	public Player getPlayer1(){
 		return player1;

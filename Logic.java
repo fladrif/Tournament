@@ -23,12 +23,16 @@ public class Logic{
 		}
 		inout.displayRound(tournament.getRound());
 		while(true){
-			if(inout.reportOrFinish()){
+			int choice = inout.reportOrDropOrFinish();
+			if(choice == 1){
 				if(!tournament.finishMatch(inout.getTable(), inout.getWin(), inout.getLoss(), inout.getDraw())){
 					System.out.println("Incorrect values entered.");
 				}
 				inout.displayRound(tournament.getRound());
-			} else {
+			} else if(choice == 0){
+				inout.showPlayers(tournament.getActive());
+				tournament.dropPlayer(inout.removePlayer());
+			} else if(choice == -1){
 				if(tournament.roundFinished()){
 					if(--rounds == 0) break;
 					tournament.nextRound();
