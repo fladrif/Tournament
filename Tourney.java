@@ -36,10 +36,10 @@ public class Tourney{
 		players.add(new Player(name, ++playerId));
 	}
 	public void removePlayer(int id){
-		players.remove(players.stream().filter(a -> a.getId() == id).iterator().next());
+		if(id != -1) players.remove(players.stream().filter(a -> a.getId() == id).iterator().next());
 	}
 	public void dropPlayer(int id){
-		active.remove(active.stream().filter(a -> a.getId() == id).iterator().next());
+		if(id != -1) active.remove(active.stream().filter(a -> a.getId() == id).iterator().next());
 	}
 	public LinkedList<Player> getPlayers(){
 		return players;

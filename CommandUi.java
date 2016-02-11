@@ -11,7 +11,15 @@ public class CommandUi implements Ui{
 	}
 	public int removePlayer(){
 		System.out.print("Please enter the Player ID: ");
-		return scan.nextInt();
+		int id = scan.nextInt();
+		scan.nextLine();
+		System.out.print("Dropping player " + id + ". Are you sure? y/n ");
+		String input = scan.nextLine();
+		while(true){
+			if(input.equals("y")) return id;
+			else if(input.equals("n")) return -1;
+			else input = scan.nextLine();
+		}
 	}
 	/*
 	public boolean getOrRemove(){
