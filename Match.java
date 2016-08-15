@@ -21,8 +21,6 @@ public class Match{
 		win = 2;
 		loss = 0;
 		draw = 0;
-		player1.addMatch(3);
-		player1.addGames(2, 6);
 		done = true;
 	}
 	public boolean matchResult(int w, int l, int d){

@@ -11,12 +11,17 @@ public class Tourney{
 		players = new LinkedList<Player>();
 		playerId = 0;
 	}
-	public void startTournament(){
-		active = players;
-		Collections.shuffle(active);
-		rounds = new LinkedList<Round>();
-		roundNum = 1;
-		rounds.add(new Round(roundNum, active));
+	public boolean startTournament(){
+		if(players.stream().count() > 3){
+			active = players;
+			Collections.shuffle(active);
+			rounds = new LinkedList<Round>();
+			roundNum = 1;
+			rounds.add(new Round(roundNum, active));
+			return true;
+		} else {
+			return false;
+		}
 	}
 	public boolean roundFinished(){
 		if(rounds.get(roundNum - 1).roundFinished()){
