@@ -1,4 +1,4 @@
-Swiss 'Tournament' Organizer
+# Swiss 'Tournament' Organizer
 
 The tournament organizer(TO) runs a swiss style tournament, a tournament that
 plays a certain number of rounds depending on the number of participants in the
@@ -10,7 +10,7 @@ Implemented with: Command Line
 To be implemented in: Java Swing
 
 
-::Program Document:: (to be implemented in Swing)
+## Program Document (to be implemented in Swing)
 
 The program starts off with a manager that prompts the user to either create a new tournament,
 load a save, or view the results of a past tournament. Starting a new tournament will prompt for more 
@@ -37,7 +37,7 @@ Adding capability to drop players, having checkboxes on the match result window,
 window inbetween rounds listing active players and their rankings.
 
 
-::Design Document:: (Not accurate over 226 players)
+## Design Document (Not accurate over 226 players)
 
   8 players:  3 rounds
 
